@@ -3,7 +3,7 @@
 	import Page from './Page.svelte';
 
 	let formSubmitted = false;
-	let emailAddress
+	let emailAddress;
 </script>
 
 <svelte:head>
@@ -14,10 +14,10 @@
 	/>
 </svelte:head>
 
-<section>
+<section class="rounded-b-xl bg-white p-0 sm:p-3 sm:rounded-3xl">
 	{#if formSubmitted}
 		<Success />
 	{:else}
-		<Page/>
+		<Page />
 	{/if}
 </section>
