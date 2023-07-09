@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
 	import Success from './Success.svelte';
 	import Page from './Page.svelte';
 
-	let formSubmitted = false;
-	let emailAddress;
+	let emailAddress: string = '';
 </script>
 
 <svelte:head>
@@ -15,9 +14,9 @@
 </svelte:head>
 
 <section class="rounded-b-xl bg-white p-0 sm:p-3 sm:rounded-3xl">
-	{#if formSubmitted}
-		<Success />
+	{#if emailAddress}
+		<Success {emailAddress} />
 	{:else}
-		<Page />
+		<Page bind:emailAddress />
 	{/if}
 </section>
