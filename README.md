@@ -65,6 +65,10 @@ When in doubt, you can launch [Svelte REPL](https://svelte.dev/repl/) online and
 
 We can decompose a page into smaller and reusable chunks / components. We can pass props to the component, make it reactive, and integrate with Svelte directives.
 
+## Svelte-forms
+
+Handling forms in svelte is hard (at least that what I feel). So I decided to use another dependency (svelte-forms) for handling form validation.
+
 ## Author
 
 - [Jonathan Yudi](https://github.com/JonathanGun)
