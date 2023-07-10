@@ -1,9 +1,16 @@
 <script lang="ts">
 	import desktopBanner from '$lib/images/illustration-sign-up-desktop.svg';
 	import mobileBanner from '$lib/images/illustration-sign-up-mobile.svg';
+	import listIcon from '$lib/images/icon-list.svg';
 
 	import Form from './Form.svelte';
-	import Benefits from './Benefits.svelte';
+	import List from '@/common/List.svelte';
+
+	const benefitTexts: string[] = [
+		'Product discovery and building what matters',
+		'Measuring to ensure updates are a success',
+		'And much more!'
+	];
 
 	export let emailAddress: string;
 </script>
@@ -16,7 +23,11 @@
 	<div id="content" class="flex flex-col space-y-3 p-10 max-w-md">
 		<h1 class="text-left py-2">Stay Updated!</h1>
 		<p>Join 60,000+ product managers receiving monthly updates on:</p>
-		<Benefits />
+		<ul id="benefits-checklist" class="flex flex-col space-y-2">
+			{#each benefitTexts as text}
+				<List iconSrc={listIcon} content={text} />
+			{/each}
+		</ul>
 		<Form bind:emailAddress />
 	</div>
 </div>
